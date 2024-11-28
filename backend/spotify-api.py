@@ -46,7 +46,7 @@ def top_tracks():
         return redirect(url_for('login'))
 
     sp = Spotify(auth=token_info['access_token'])
-    results = sp.current_user_top_tracks(limit=10)
+    results = sp.current_user_top_tracks(limit=10, time_range='short_term')
     top_tracks = [
         {
             'name': track['name'],
