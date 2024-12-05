@@ -1,4 +1,6 @@
 spotify-env/
+__pycache__/
+backend/__pycache__/
 
 # Logs
 logs
