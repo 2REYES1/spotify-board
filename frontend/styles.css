@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
 
-h1 {
+.month-header {
     font-family: 'Londrina Shadow', cursive; 
     text-align: center; 
-    font-style:italic;
+    font-style: italic;
+    font-size: 80px;
     color: rgb(226, 224, 224); /* Text color */
     font-weight: bolder;
     text-shadow: 5px 7px 8px rgba(0, 0, 0, 0.8);
-    background-color: rgb(47, 47, 47); /* Black background */
-    padding: 20px 200px; /* Add padding to create a rectangle effect */
-    border-radius: 30px; /* Rounded corners */
-    display: inline-block; /* Ensures the background only wraps around the text */
+    background-color: rgb(47, 47, 47); 
+    padding: 20px 200px; 
+    border-radius: 30px;
+    display: inline-block; 
     margin-top: 5px;
     margin-bottom: 10px;
     box-shadow: 10px 10px 9px rgba(69, 69, 69, 0.8); 
 }
+
 
 
 
@@ -296,3 +298,49 @@ h1 {
 }
 
 
+
+@media (max-width: 1000px) {
+    .month-header {
+        padding: 20px 120px; 
+        font-size: 50px; 
+    }
+    .album-cover-modal { 
+        width: 200px; 
+        height: 200px;   
+    }
+
+    .track-number-modal {
+        font-size: 30px;  
+    }
+    
+    .song-name-modal {
+        font-size: 30px;
+        
+    }
+
+    .track-rating-modal {
+        font-size: 25px;
+      
+    }
+
+    #track-popup #change-rating-btn {
+        font-size: 12px; 
+        border-radius: 15px; 
+        padding: 2px 15px; 
+        
+    }
+}
+
+
+@media (max-width: 600px) {
+    .month-header {
+        padding: 20px 40px; 
+        font-size: 30px; 
+    }
+    .album-cover-modal { 
+        width: 200px; 
+        height: 200px;   
+        margin-bottom: 20px;
+    }
+  
+}
