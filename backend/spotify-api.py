@@ -21,9 +21,20 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIFY_CLIENT_ID,
 
 @app.route('/top-tracks')
 def top_tracks():
-    # Fetch the user's top 10 tracks
-    results = sp.current_user_top_tracks(limit=10)
-    tracks = [{'name': track['name']} for track in results['items']]  
+   
+    results = sp.current_user_top_tracks(limit=10, time_range="short_term")
+    
+    
+    tracks = []
+    for track in results['items']:
+        track_info = {
+            'name': track['name'],
+            'album': track['album']['name'],
+            'album_image': track['album']['images'][0]['url']  
+        }
+        tracks.append(track_info)
+    
+    
     return jsonify(tracks=tracks)
 
 if __name__ == '__main__':
