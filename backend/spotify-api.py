@@ -22,7 +22,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIFY_CLIENT_ID,
                                                scope='user-top-read'))
 
 
-
+# flask route to retrieve user's top 10 tracks
 @app.route('/top-tracks')
 def top_tracks():
     results = sp.current_user_top_tracks(limit=10, time_range="short_term")
@@ -39,7 +39,8 @@ def top_tracks():
     
     return jsonify(tracks=tracks)
 
-ratings = {}
+ratings = {} # ratings stored in here
+# route to change rating of a track in the backend
 @app.route('/rate', methods=['POST'])
 def rate():
     data = request.json
@@ -49,7 +50,7 @@ def rate():
     print(ratings)
     return jsonify({"message": "Rating saved!", "ratings": ratings})
 
-
+# route to retrieve rating of a track in the backend
 @app.route('/get-rating', methods=['GET'])
 def get_rating():
     track_name = request.args.get('track_name')

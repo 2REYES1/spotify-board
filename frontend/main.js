@@ -3,7 +3,9 @@ $(document).ready(function () {
         url: "http://127.0.0.1:5000/top-tracks", 
         method: "GET",
         success: function (data) {
+            // gets users top 10 tracks of the month (past 4 weeks) from the backend.
             data.tracks.forEach((track, index) => {
+                // iterates through each polaroid and populates with track data.
                 const trackId = `#track${index + 1}`;
                 const polaroid = $(trackId);
 
@@ -18,9 +20,9 @@ $(document).ready(function () {
                         $('#track-popup .song-name-modal').text(track.name);
                         $('#track-popup .artist-name-modal').text(track.artists.join(', '));
                         $('#track-popup .album-name-modal').text(`album: ${track.album}`);
-
-
                         
+                        // pulls user's track rating from backend.
+                        // if there is no rating, the polaroid will just say unrated.
                         $.ajax({
                             url: 'http://127.0.0.1:5000/get-rating', 
                             method: 'GET',
@@ -38,11 +40,12 @@ $(document).ready(function () {
                 }
             });
 
-            
+            // close track popup with close button
             $('.close').click(function () {
                 $('#track-popup').fadeOut();
             });
 
+            // close popup if user clicks outside of the track popup
             $(window).click(function (event) {
                 if ($(event.target).is('#track-popup')) {
                     $('#track-popup').fadeOut();
@@ -58,6 +61,7 @@ $(document).ready(function () {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    // makes each polaroid rotated a different direction when page is loaded
     const polaroids = document.querySelectorAll('.polaroid');
 
     polaroids.forEach(polaroid => {
@@ -82,17 +86,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 $(document).ready(function () {
-    
+    // open change rating popup when the change rating button is pressed
     $('#change-rating-btn').click(function () {
         $('#change-rating-popup').css('display', 'flex').fadeIn();
     });
 
-   
+    // close change rating button when close is pressed
     $('.close-rating').click(function () {
         $('#change-rating-popup').fadeOut();
     });
 
-    
+    // submit rating to backend
     $('#submit-rating-btn').click(function () {
         const trackName = $('#track-popup .song-name-modal').text(); 
         const rating = $('input[name="rating"]:checked').val(); 
@@ -121,7 +125,7 @@ $(document).ready(function () {
         });
     });
 
- 
+    // close change rating popup if clicked outside of the popup
     $(window).click(function (event) {
         if ($(event.target).is('#change-rating-popup')) {
             $('#change-rating-popup').fadeOut();
