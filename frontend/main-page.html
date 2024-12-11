@@ -3,12 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Top Tracks</title>
+    <title>Spotify Board</title>
+    <script src="main.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/static/main.js" defer></script> <!-- Link to the external JS file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
 </head>
-<body>
-    <h1>User's Top 10 Tracks!!</h1>
-    <ul id="top-tracks"></ul>
+<body class="h-100 mr-5 ml-5 d-flex flex-column">
+    <div class="row align-items-center justify-content-center">
+        <h1>November 2024</h1>
+    </div>
+
+    
+
+    <div class="container polaroid-rows">
+        <!-- First Row of Polaroids -->
+
+       
+        <div id="track-popup" class="modal align-items-center justify-content-center">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="track-info">
+                    <div class="album-cover-modal"></div>
+                    <p class="track-number-modal"></p>
+                    <p class="song-name-modal"></p>
+                    <p class="artist-name-modal"></p>
+                    <p class="album-name-modal"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="polaroid-row row justify-content-center">
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track1">
+                    <div class="album-cover" style="background-image: url('path-to-album-image1.jpg');"></div>
+                    <div class="song-name">Song 1</div>
+                </div>
+            </div>
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track2">
+                    <div class="album-cover" style="background-image: url('path-to-album-image2.jpg');"></div>
+                    <div class="song-name">Song 2</div>
+                </div>
+            </div>
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track3">
+                    <div class="album-cover" style="background-image: url('path-to-album-image3.jpg');"></div>
+                    <div class="song-name">Song 3</div>
+                </div>
+            </div>
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track4">
+                    <div class="album-cover" style="background-image: url('path-to-album-image4.jpg');"></div>
+                    <div class="song-name">Song 4</div>
+                </div>
+            </div>
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track5">
+                    <div class="album-cover" style="background-image: url('path-to-album-image5.jpg');"></div>
+                    <div class="song-name">Song 5</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row of Polaroids -->
+        <div class="polaroid-row row justify-content-center">
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track6">
+                    <div class="album-cover" style="background-image: url('path-to-album-image6.jpg');"></div>
+                    <div class="song-name">Song 6</div>
+                </div>
+            </div>
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track7">
+                    <div class="album-cover" style="background-image: url('path-to-album-image7.jpg');"></div>
+                    <div class="song-name">Song 7</div>
+                </div>
+            </div>
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track8">
+                    <div class="album-cover" style="background-image: url('path-to-album-image8.jpg');"></div>
+                    <div class="song-name">Song 8</div>
+                </div>
+            </div>
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track9">
+                    <div class="album-cover" style="background-image: url('path-to-album-image9.jpg');"></div>
+                    <div class="song-name">Song 9</div>
+                </div>
+            </div>
+            <div class="polaroid-container col-md-2 col-4">
+                <div class="polaroid" id="track10">
+                    <div class="album-cover" style="background-image: url('path-to-album-image10.jpg');"></div>
+                    <div class="song-name">Song 10</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

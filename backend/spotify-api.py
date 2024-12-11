@@ -3,11 +3,13 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from flask import Flask, jsonify
 from flask_cors import CORS  
+from dotenv import load_dotenv
+load_dotenv()  
 
 app = Flask(__name__)
 
 
-CORS(app) # allows the html port to connect to the server port locally
+CORS(app) 
 
 SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
 SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
