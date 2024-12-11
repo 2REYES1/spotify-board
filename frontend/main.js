@@ -14,10 +14,11 @@ $(document).ready(function () {
                     polaroid.click(function () {
                         $('#track-popup').css('display', 'flex').fadeIn();
                         $('#track-popup .album-cover-modal').css('background-image', `url(${track.album_image})`);
-                        $('#track-popup .track-number-modal').text(`${index + 1}`);
+                        $('#track-popup .track-number-modal').text(`#${index + 1}`);
                         $('#track-popup .song-name-modal').text(track.name);
                         $('#track-popup .artist-name-modal').text(track.artists.join(', '));
-                        $('#track-popup .album-name-modal').text(track.album);
+                        $('#track-popup .album-name-modal').text(`album: ${track.album}`);
+
 
                         
                         $.ajax({
@@ -25,8 +26,8 @@ $(document).ready(function () {
                             method: 'GET',
                             data: { track_name: track.name }, 
                             success: function (response) {
-                                const rating = response.rating || "Unrated"; 
-                                $('#track-popup .track-rating-modal').text(rating === "Unrated" ? rating : `${rating} ★`);
+                                const rating = response.rating || "unrated"; 
+                                $('#track-popup .track-rating-modal').text(rating === "unrated" ? rating : `${rating} ★`);
                             },
                             error: function (xhr, status, error) {
                                 console.error("Failed to fetch rating:", error);

@@ -19,30 +19,30 @@
         <h1>December 2024</h1>
     </div>
 
-    
-
-    <div class="container polaroid-rows">
-        <!-- First Row of Polaroids -->
-
-       
-        <div id="track-popup">
+    <div id="track-popup">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <div class="album-cover-modal"></div>
-                <div class="track-number-modal"></div>
-                <div class="song-name-modal"></div>
-                <div class="artist-name-modal"></div>
-                <div class="album-name-modal">Unrated</div>
-                <div class="track-rating-modal">Unrated</div>
-                <button id="change-rating-btn">Change Rating</button>
+                <div class="row align-items-center justify-content-center">
+                    <p class="track-number-modal"></p>
+                    <p class="song-name-modal"></p>
+                </div>
+                
+                <div class="artist-name-modal text-center"></div>
+                <div class="album-name-modal text-center"></div>
+                <div class="row align-items-center justify-content-center">
+                    <div class="track-rating-modal">unrated</div>
+                    <button id="change-rating-btn">Change Rating</button>
+                </div>
+            
             </div>
-        </div>
+    </div>
         
         
-        <div id="change-rating-popup">
+    <div id="change-rating-popup">
             <div class="change-rating-modal-content">
                 <button class="close-rating">&times;</button>
-                <h3>Change Rating</h3>
+                <p class="change-rating-header">Change Rating</p>
                 <div class="rating">
                     <label>
                         <input type="radio" name="rating" value="1" />
@@ -67,10 +67,10 @@
                 </div>
                 <button id="submit-rating-btn">Submit</button>
             </div>
-        </div>
-        
-        
+    </div>
 
+    <div class="container polaroid-rows">
+        <!-- First Row of Polaroids -->
         <div class="polaroid-row row justify-content-center">
             <div class="polaroid-container col-md-2 col-4">
                 <div class="polaroid" id="track1">

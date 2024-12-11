@@ -3,10 +3,19 @@
 h1 {
     font-family: 'Londrina Shadow', cursive; 
     text-align: center; 
-    color: #272727; 
+    font-style:italic;
+    color: rgb(226, 224, 224); /* Text color */
     font-weight: bolder;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    text-shadow: 5px 7px 8px rgba(0, 0, 0, 0.8);
+    background-color: rgb(47, 47, 47); /* Black background */
+    padding: 20px 200px; /* Add padding to create a rectangle effect */
+    border-radius: 30px; /* Rounded corners */
+    display: inline-block; /* Ensures the background only wraps around the text */
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-shadow: 10px 10px 9px rgba(69, 69, 69, 0.8); 
 }
+
 
 
 body {
@@ -37,7 +46,7 @@ h1 {
     height: 100%; 
     text-align: center;
     border: 7px solid #ffffff; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.8); 
     background-color: #fff; 
 }
 
@@ -90,13 +99,13 @@ h1 {
 
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #f4f4f4;
     padding: 20px;
-    border: 1px solid #888;
+    border: 10px solid #252525;
     width: 80%; 
     max-width: 600px; 
     border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); 
+    box-shadow: 10px 14px 6px rgba(0, 0, 0, 0.8); 
 }
 
 
@@ -125,16 +134,41 @@ h1 {
     height: 300px; 
     border-radius: 10px;
     overflow: hidden; 
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.8); 
+    box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.8); 
     margin: 0 auto; 
 }
 
-
-.song-name-modal, .artist-name-modal, .album-name-modal {
-    font-size: 18px;
-    margin: 10px 0;
+.track-number-modal {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0;
 }
 
+.song-name-modal {
+    font-size: 40px;
+    margin: 0px 10px;
+    
+}
+
+.artist-name-modal {
+    font-size: 20px;
+    margin: 0px 10px;
+}
+
+.album-name-modal {
+    font-size: 15px;
+    margin: 0px 10px;
+}
+
+.track-rating-modal {
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
+}
 
 .rating {
     display: flex;
@@ -156,7 +190,6 @@ h1 {
     color: gold; 
 } 
 
-
 #change-rating-popup {
     display: none;
     position: fixed;
@@ -165,7 +198,6 @@ h1 {
     top: 0;
     width: 100%;
     height: 100%;
-  
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.4);
@@ -179,6 +211,45 @@ h1 {
     width: 300px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+.change-rating-header{
+    font-size: 20px;
+    color: black;
+}
+
+.rating {
+    display: block;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.rating label {
+    display: block; 
+    margin: 10px 0; 
+    text-align: left; 
+}
+
+.rating input {
+    margin-right: 5px; 
+}
+
+#submit-rating-btn {
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 15px; 
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#submit-rating-btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black; 
 }
 
 .close-rating {
@@ -196,4 +267,32 @@ h1 {
 .close-rating:hover {
     color: black; 
 }
+
+
+
+#track-popup .track-rating-modal {
+    text-align: left; 
+    margin-left: 20px;
+}
+
+#track-popup #change-rating-btn {
+    margin-left: auto;
+    text-align: right;
+    margin-right: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 15px; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+#track-popup #change-rating-btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black; 
+}
+
 
