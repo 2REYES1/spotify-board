@@ -16,7 +16,7 @@
 </head>
 <body class="h-100 mr-5 ml-5 d-flex flex-column">
     <div class="row align-items-center justify-content-center">
-        <h1>November 2024</h1>
+        <h1>December 2024</h1>
     </div>
 
     
@@ -25,18 +25,51 @@
         <!-- First Row of Polaroids -->
 
        
-        <div id="track-popup" class="modal align-items-center justify-content-center">
+        <div id="track-popup">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <div class="track-info">
-                    <div class="album-cover-modal"></div>
-                    <p class="track-number-modal"></p>
-                    <p class="song-name-modal"></p>
-                    <p class="artist-name-modal"></p>
-                    <p class="album-name-modal"></p>
-                </div>
+                <div class="album-cover-modal"></div>
+                <div class="track-number-modal"></div>
+                <div class="song-name-modal"></div>
+                <div class="artist-name-modal"></div>
+                <div class="album-name-modal">Unrated</div>
+                <div class="track-rating-modal">Unrated</div>
+                <button id="change-rating-btn">Change Rating</button>
             </div>
         </div>
+        
+        
+        <div id="change-rating-popup">
+            <div class="change-rating-modal-content">
+                <button class="close-rating">&times;</button>
+                <h3>Change Rating</h3>
+                <div class="rating">
+                    <label>
+                        <input type="radio" name="rating" value="1" />
+                        <span>★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="2" />
+                        <span>★★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="3" />
+                        <span>★★★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="4" />
+                        <span>★★★★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="5" />
+                        <span>★★★★★</span>
+                    </label>
+                </div>
+                <button id="submit-rating-btn">Submit</button>
+            </div>
+        </div>
+        
+        
 
         <div class="polaroid-row row justify-content-center">
             <div class="polaroid-container col-md-2 col-4">

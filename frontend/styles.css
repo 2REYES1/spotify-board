@@ -107,8 +107,7 @@ h1 {
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover{
     color: black;
     text-decoration: none;
     cursor: pointer;
@@ -135,3 +134,66 @@ h1 {
     font-size: 18px;
     margin: 10px 0;
 }
+
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.rating label {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.rating span {
+    color: #000000; 
+} 
+
+.rating input:checked ~ span,
+.rating input:hover ~ span {
+    color: gold; 
+} 
+
+
+#change-rating-popup {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.change-rating-modal-content {
+    position: relative; 
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+}
+
+.close-rating {
+    position: absolute;
+    top: 10px;
+    left: 10px; 
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-rating:hover {
+    color: black; 
+}
+
